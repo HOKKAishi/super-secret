@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle, #fff0f3, #f9e3e3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    z-index: 10;
+    animation: bounceIn 1s ease;
+}
+
+/* Pulsing Heartbeat Text */
+.header_text {
+    font-size: 4em;
+    color: #d32f2f;
+    margin-bottom: 10px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.sub_text {
+    font-size: 1.5em;
+    color: #ff4d6d;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* GIF Styling with Glow */
+.gif_container img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.4);
+    border: 5px solid white;
+}
+
+/* Confetti Styling */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    z-index: 5;
+    animation: fallConfetti linear forwards;
+}
+
+/* Animations */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.1); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fallConfetti {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+/* Keep original heart animation for consistency */
+.heart {
+    position: absolute;
+    color: #ff4d6d;
+    top: -10%;
+    z-index: 1;
+    animation: fall linear forwards;
+}
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); }
+}

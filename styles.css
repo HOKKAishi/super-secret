@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed from 100hv */
+    margin: 0;
+    background: radial-gradient(circle, #fce4ec, #f9e3e3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
+    overflow: hidden; /* Keeps hearts inside the screen */
+}
+
+/* Floating Heart Animation */
+body::before {
+    content: "❤️";
+    position: absolute;
+    top: -10%;
+    left: 10%;
+    font-size: 20px;
+    opacity: 0.5;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(110vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+.container {
+    text-align: center;
+    z-index: 1; /* Stay above hearts */
+    background: rgba(255, 255, 255, 0.4);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #d32f2f;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.yes-button {
+    font-size: 1.2em;
+    padding: 12px 25px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth growth */
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.no-button {
+    font-size: 1.2em;
+    padding: 12px 25px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.no-button:hover {
+    background-color: #d32f2f;
+    transform: scale(0.95);
+}
+
+.gif_container {
+    margin-top: 30px;
+}
+
+.gif_container iframe {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}

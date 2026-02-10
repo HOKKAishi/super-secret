@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knew you would say yes hehe</title>
+    <link rel="stylesheet" href="yes_style.css">
+</head>
+<body>
+    <div id="confetti-wrapper"></div>
+
+    <div class="container">
+        <h1 class="header_text">Knew you would say yes! ❤️</h1>
+        <div class="gif_container">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGVjNnU3MXBzMHppaXlscjMxOXFrZmxodGJna3YxNGU3eXNibDdjMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UVndnbo0pIZnGAeFCF/giphy.gif" alt="Said Yes">
+        </div>
+        <p class="sub_text">See you on the 14th! ✨</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Trigger a confetti burst on load
+        window.onload = () => {
+            for(let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+        };
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = ['#ff4d6d', '#ffb3c1', '#ff758f', '#ffffff'][Math.floor(Math.random() * 4)];
+            confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+            confetti.style.opacity = Math.random();
+            document.getElementById('confetti-wrapper').appendChild(confetti);
+            
+            setTimeout(() => confetti.remove(), 5000);
+        }
+    </script>
+</body>
+</html>
